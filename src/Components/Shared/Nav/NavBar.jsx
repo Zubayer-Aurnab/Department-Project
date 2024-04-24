@@ -23,7 +23,7 @@ const NavBar = () => {
                         className='border-[1px] border-[#342E5C] rounded-full px-6 h-8 text-sm w-1/2 bg-transparent text-[#AD88C6]'
                         placeholder={`Who are you looking for...? `}
                     />
-                    <FaSearch className='absolute right-[380px] hidden lg:flex text-[#AD88C6]' />
+                    <FaSearch className='absolute right-[420px] hidden lg:flex text-[#AD88C6]' />
                 </div>
                 <div className='flex gap-8  items-center '>
                     <p className='text-[#342E5C] font-bold'>About Us</p>
@@ -57,6 +57,7 @@ const NavBar = () => {
                 <div
                     style={{
                         transition: "left 0.4s ease-in-out",
+                        zIndex:"100"
                     }}
                     className={`gap-8 px-2 items-center absolute bg-[#E1AFD1] ${IsOpen ? "left-0 " : "left-[-250px]"} w-1/2 h-screen py-2 `}>
                     <button

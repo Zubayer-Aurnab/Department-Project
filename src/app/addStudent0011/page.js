@@ -1,7 +1,6 @@
 "use client";
 
 import axios from "axios";
-import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const page = () => {
@@ -48,19 +47,15 @@ const page = () => {
       session: "2020-21",
     };
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-
     const res = await axios.post("http://localhost:5000/all-students", {
       data,
     });
-    if(data.insertedId){
-      toast.success("Student added successfully")
+    if (res.data.insertedId || res.data.acknowledge) {
+      toast.success("Student added successfully");
+      form.reset();
     }
-    console.log(res.data);
-
-    // console.log(data);
   };
-  // console.log(showAlert);
+
   return (
     <div>
       <form onSubmit={handelSubmit} className=" mt-10 border-8 p-10  gap-5">

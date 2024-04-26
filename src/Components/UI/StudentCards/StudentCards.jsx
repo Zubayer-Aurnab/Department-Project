@@ -55,13 +55,13 @@ const StudentCards = () => {
                                     </filter>
                                 </defs>
                             </svg>
-                            <div className='absolute top-8 left-11 '>
+                            <div className='absolute top-8 left-10 '>
                                 <div className='flex relative'>
-                                    <Image src={iron} alt="" width={0} height={0} className='w-44 ' />
+                                    <Image src={student.image} alt="" width={1000} height={1000} className='w-44 h-[16.5rem] object-cover' />
                                     <h1 className='text-5xl text-[#342E5C] rotate-90 font-bold absolute left-[10rem] top-16 '>{student.roll.slice(-3)}</h1>
                                 </div>
-                                <div className='mt-12'>
-                                    <h1 className='text-[#FFF0F0] text-xl font-bold '>{student.name}</h1>
+                                <div className='mt-12 '>
+                                    <h1 className='text-black text-xl font-bold  '>{student.name}</h1>
                                     <p className='text-[#FFF0F0]'>{student.roll}</p>
                                 </div>
                             </div>

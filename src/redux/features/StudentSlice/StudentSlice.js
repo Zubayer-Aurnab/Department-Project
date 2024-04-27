@@ -1,10 +1,6 @@
 import { getData } from "@/redux/getApi";
 
-const {
-  createSlice,
-
-  createAsyncThunk,
-} = require("@reduxjs/toolkit");
+const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const initialState = {
   students: [],
@@ -13,14 +9,10 @@ const initialState = {
   error: "",
 };
 
-export const fetchData = createAsyncThunk(
-  "student-data",
-
-  async () => {
-    const students = await getData();
-    return students;
-  }
-);
+export const fetchData = createAsyncThunk("student-data", async () => {
+  const students = await getData();
+  return students;
+});
 
 const StudentSlice = createSlice({
   name: "Student Data",

@@ -29,8 +29,8 @@ const studentDetails = ({ params }) => {
       {isLoading ? (
         <Spin fullscreen size="large" />
       ) : (
-        <div className="lg:w-4/5 px-2 lg:px-0 mx-auto flex justify-between flex-col-reverse lg:flex-row  mt-10 lg:mt-20 ">
-          <div className="">
+        <div className="lg:w-4/5 px-4 lg:px-0 mx-auto flex justify-between flex-col-reverse lg:flex-row  mt-10 lg:mt-20 ">
+          <div className="w-full">
             {/* part-1 */}
             <div className="text-[#342E5C] space-y-5 mt-5 lg:mt-0">
               <h1 className="text-3xl lg:text-5xl font-semibold">
@@ -83,13 +83,13 @@ const studentDetails = ({ params }) => {
               </div>
             </div>
           </div>
-          <div className="lg:flex  lg:justify-end">
+          <div className="lg:flex  lg:justify-end w-full">
             <Image
               alt=""
               src={studentDetails.image}
               width={1000}
               height={1000}
-              className="w-full lg:w-1/2"
+              className="w-full lg:w-1/2 object-cover rounded-lg"
             />
           </div>
         </div>

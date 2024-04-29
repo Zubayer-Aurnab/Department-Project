@@ -18,8 +18,8 @@ const StudentCards = () => {
 
 
     return (
-        <div className='h-screen'>
-            <h1 className='text-4xl my-20 font-bold text-center text-[#342E5C]'>The People Of  Psy 10</h1>
+        <div className='bg-[#FFF0F0] '>
+            <h1 className='text-3xl lg:text-4xl mt-10 lg:my-20 font-bold text-center text-[#342E5C] mb-10'>The People Of  Psy 10</h1>
 
             <div
                 className='lg:w-4/5 mx-auto grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-4 gap-10'
@@ -66,7 +66,7 @@ const StudentCards = () => {
                                             <h1 className='text-5xl text-[#342E5C] rotate-90 font-bold absolute left-[10rem] top-16 '>{student?.roll.slice(-3)}</h1>
                                         </div>
                                         <div className='mt-12 '>
-                                            <h1 className='text-black text-xl font-bold  '>{student?.name}</h1>
+                                            <h1 className='text-black text-xl font-bold '>{student.name.length > 20 ? student.name.slice(0, 20) + "..." : student.name}</h1>
                                             <p className='text-[#FFF0F0]'>{student?.roll}</p>
                                         </div>
                                     </div>

@@ -5,10 +5,20 @@ import Image from 'next/image';
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { useDispatch } from 'react-redux';
+import { fetchData } from '@/redux/features/StudentSlice/StudentSlice';
 
 const NavBar = () => {
 
     const [IsOpen, setIsOpen] = useState(false)
+    const dispatch = useDispatch()
+    const search = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const search = form.search.value
+        dispatch(fetchData(search))
+
+    }
 
     return (
         <div className=''>
@@ -17,14 +27,17 @@ const NavBar = () => {
                 <div >
                     <Image src={logo} alt="" className='w-24 ' />
                 </div>
-                <div className='w-full  flex-1 flex justify-center items-center relative'>
+                <form
+                    onSubmit={search}
+                    className='w-full  flex-1 flex justify-center items-center relative'>
                     <input
+                        name="search"
                         type="text"
                         className='border-[1px] border-[#342E5C] rounded-full px-6 h-8 text-sm w-1/2 bg-transparent text-[#AD88C6]'
                         placeholder={`Who are you looking for...? `}
                     />
                     <FaSearch className='absolute right-[420px] hidden lg:flex text-[#AD88C6]' />
-                </div>
+                </form>
                 <div className='flex gap-8  items-center '>
                     <p className='text-[#342E5C] font-bold'>About Us</p>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -57,7 +70,7 @@ const NavBar = () => {
                 <div
                     style={{
                         transition: "left 0.4s ease-in-out",
-                        zIndex:"100"
+                        zIndex: "100"
                     }}
                     className={`gap-8 px-2 items-center absolute bg-[#E1AFD1] ${IsOpen ? "left-0 " : "left-[-250px]"} w-1/2 h-screen py-2 `}>
                     <button

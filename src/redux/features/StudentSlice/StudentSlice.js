@@ -9,8 +9,8 @@ const initialState = {
   error: "",
 };
 
-export const fetchData = createAsyncThunk("student-data", async () => {
-  const students = await getData();
+export const fetchData = createAsyncThunk("student-data", async (search) => {
+  const students = await getData(search);
   return students;
 });
 

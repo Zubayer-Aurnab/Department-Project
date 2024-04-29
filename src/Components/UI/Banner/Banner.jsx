@@ -33,7 +33,7 @@ const Banner = () => {
                             borderRadius: "100% 0% 61% 39% / 0% 100% 0% 100% "
                         }}
                         src={images[currentImage]}
-                        alt=""
+                        alt="" 
                         width={0}
                         height={0}
                         className="w-full object-contain" />

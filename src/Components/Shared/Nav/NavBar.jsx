@@ -7,16 +7,21 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { useDispatch } from 'react-redux';
 import { fetchData } from '@/redux/features/StudentSlice/StudentSlice';
+import Link from 'next/link';
 
 const NavBar = () => {
 
     const [IsOpen, setIsOpen] = useState(false)
     const dispatch = useDispatch()
+
     const search = (e) => {
         e.preventDefault()
         const form = e.target
         const search = form.search.value
         dispatch(fetchData(search))
+
+    }
+    const navigate = () => {
 
     }
 
@@ -50,14 +55,19 @@ const NavBar = () => {
             {/* small device ------------------------------------ */}
             <div className=' px-2  justify-between flex flex-row-reverse md:hidden relative'>
                 <Image src={logo} alt="" className='w-24 py-2' />
-                <div className='w-full flex-1 flex justify-center items-center relative '>
+                <form
+                    onSubmit={search}
+                    className='w-full flex-1 flex justify-center items-center relative '>
                     <input
+                        name='search'
                         type="text"
                         className='border-[1px] border-[#342E5C] rounded-full px-6 h-8 text-sm  bg-transparent text-[#AD88C6] '
                         placeholder={`Who are you looking for...? `}
                     />
-                    <FaSearch className='absolute right-9 text-[#AD88C6]' />
-                </div>
+                    <button className='absolute right-9'>
+                        <FaSearch className=' text-[#AD88C6] ' />
+                    </button>
+                </form>
 
                 <div className='flex justify-center items-center'>
                     <button

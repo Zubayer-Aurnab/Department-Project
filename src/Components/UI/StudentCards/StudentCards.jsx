@@ -1,6 +1,6 @@
 "use client"
 import { fetchData } from '@/redux/features/StudentSlice/StudentSlice';
-import { Spin } from 'antd';
+import { Alert, Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -20,12 +20,23 @@ const StudentCards = () => {
     return (
         <div className='bg-[#FFF0F0] '>
             <h1 className='text-3xl lg:text-4xl mt-10 lg:my-20 font-bold text-center text-[#342E5C] mb-10'>The People Of  Psy 10</h1>
+            {students.length == 0 ? <div className='w-full flex justify-center mb-10'>
+                <Alert
+                    message="Not Found"
+                    description="There is no student by this name ! Please check your spelling"
+                    type="warning"
+                    showIcon
+                    closable
+                    className='border-4'
 
+                />
+            </div> : ""}
             <div
                 className='lg:w-4/5 mx-auto grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-4 gap-10'
             >
                 {
                     isLoading ? <Spin fullscreen size="large" /> :
+
                         students?.map(student => (
 
                             <Link key={student?._id} href={`/StudentDetails/${student?._id}`}>

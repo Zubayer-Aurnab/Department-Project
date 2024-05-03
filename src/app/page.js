@@ -1,3 +1,4 @@
+import Footer from "@/Components/Shared/Footer/Footer";
 import NavBar from "@/Components/Shared/Nav/NavBar";
 import Banner from "@/Components/UI/Banner/Banner";
 import StudentCards from "@/Components/UI/StudentCards/StudentCards";
@@ -12,6 +13,7 @@ export default function Home() {
         <Banner />
         <Toaster />
         <StudentCards />
+        <Footer />
       </div>
     </>
   );

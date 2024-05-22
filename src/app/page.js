@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 export default function Home() {
   return (
     <>
-      <div className="bg-[#FFF0F0] h-screen ">
+      <div className="bg-[#FFF0F0]  ">
         <NavBar />
         <Banner />
         <Toaster />

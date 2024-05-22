@@ -47,7 +47,7 @@ const page = () => {
       session: "2020-21",
     };
 
-    const res = await axios.post("http://localhost:5000/all-students", {
+    const res = await axios.post("https://psychology-10-batch.vercel.app/all-students", {
       data,
     });
     if (res.data.insertedId || res.data.acknowledge) {

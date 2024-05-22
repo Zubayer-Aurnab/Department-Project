@@ -1,0 +1,22 @@
+/* .ant-collapse-header {
+    border: 2px solid #342E5C !important;
+} */
+
+.ant-collapse-content-box {
+    background-color: #FFF0F0;
+    font-weight: 400 !important;
+}
+
+.ant-collapse-header-text {
+    p {
+        font-weight: 700;
+        color: #342E5C;
+    }
+}
+
+.ant-collapse-content-box {
+    p {
+        font-weight: 600;
+        color: #342E5C;
+    }
+}

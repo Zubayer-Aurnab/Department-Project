@@ -12,7 +12,9 @@ const initialState = {
 export const fetchSingleData = createAsyncThunk(
   "fetchSingleData",
   async (id) => {
-    const res = await axios.get(`http://localhost:5000/all-students-get/${id}`);
+    const res = await axios.get(
+      `https://psychology-10-batch.vercel.app/all-students-get/${id}`
+    );
     console.log(res.data);
     return res.data;
   }
